@@ -19,6 +19,18 @@ var car2 = {
 		console.log("engine is stoped");
 	}
 }
+
+var car3 = {
+	name : "Fiat",
+	ph : "200ph",
+	start : function () {
+		console.log("engine is starting");
+	},
+	stop : function () {
+		console.log("engine is stoped");
+	}
+}
+
 //            0     1
-var cars = [car1, car2];
+var cars = [car1, car2, car3];
 console.log(cars[0].name);
