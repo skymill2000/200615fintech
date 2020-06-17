@@ -15,16 +15,19 @@
 <script>
     console.log('test');
     $("#loginBtn").click(function(){
-        var userId = $("#userId").val();
-        var userPassword = $("#userPassword").val();
+        var userIdInput = $("#userId").val();
+        var userPasswordInput = $("#userPassword").val();
         console.log('사용자 입력값은 :',userId, userPassword);
         //------------------ajax----------------
         $.ajax({
-            url:'',
-            type : '',
+            url:'/inputTest',
+            type : 'POST',
             data : {
+                userIdBody : userIdInput,
+                userPasswordBody : userPasswordInput
             },
             success:function(data){
+                console.log(data);
             }
         })
         //------------------ajax----------------
