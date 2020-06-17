@@ -63,8 +63,11 @@ app.post('/signup', function(req, res){
     var userRefreshToken = req.body.userRefreshToken;
     var userSeqNo = req.body.userSeqNo;
     console.log(userAccessToken, userRefreshToken, userSeqNo)
-    var sql = "INSERT INTO fintech.user (name, email, password, accesstoken, refreshtoken, userseqno) VALUES (?, ?, ?, ?, ?, ?)"
-    connection.query(sql,[userName, userEmail, userPassword, userAccessToken, userRefreshToken, userSeqNo], function (error, results, fields) {
+    var sql = "INSERT INTO fintech.user"+
+    " (name, email, password, accesstoken, refreshtoken, userseqno)"+
+    " VALUES (?, ?, ?, ?, ?, ?)"
+    connection.query(sql,[userName, userEmail, userPassword, 
+        userAccessToken, userRefreshToken, userSeqNo], function (error, results, fields) {
         if (error) throw error;
         res.json('가입완료');
     });
