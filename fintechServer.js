@@ -63,6 +63,7 @@ app.post('/login', function(req, res){
                     },
                     function(err, token) {
                         console.log('우리가 발급한 토큰 : ',token);
+                        res.json(token);
                     }
                 );                   
             }
